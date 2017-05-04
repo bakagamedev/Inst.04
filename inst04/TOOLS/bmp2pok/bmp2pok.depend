@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1481106913 source:c:\pokittodev\pokitto\pokitto\tools\bmp2pok\helpers.cpp
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"windows.h"
+	"helpers.h"
+
+1481106964 c:\pokittodev\pokitto\pokitto\tools\bmp2pok\helpers.h
+
+1481211296 source:c:\pokittodev\pokitto\pokitto\tools\bmp2pok\main.cpp
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+	"windows.h"
+	"helpers.h"
+
