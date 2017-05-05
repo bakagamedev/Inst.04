@@ -1,15 +1,28 @@
 #pragma once
 #include "types.h"
+#include "world.h"
+
+class World;
+
 class Camera
 {
 private:
-    Point position;
+    Point16 position;
+    World *world;
 public:
-    Point getPosition();
 
+    void SetWorld(World &world)
+    {
+        this->world = &world;
+    }
+
+    Point16 getPosition()
+    {
+        return position;
+    }
     int16_t GetX()  {   return position.x;  }
     int16_t GetY()  {   return position.y;  }
-    void setPosition(Point position)
+    void setPosition(Point16 position)
     {
         this->position = position;
     }

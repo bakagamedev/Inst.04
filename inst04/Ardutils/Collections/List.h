@@ -28,7 +28,7 @@ namespace Ardutils
 		bool Add(const TItem & item); // O(1)
 		void Remove(const TItem & item); // O(n)
 		void RemoveAt(const int8_t index); // O(n)
-		
+
 		void Clear(void); // O(n)
 		bool Contains(const TItem & item) const; // O(n)
 
