@@ -2549,7 +2549,7 @@
 	"Synth.h"
 	"HWSound.h"
 
-1493866756 c:\users\noela\documents\github\inst.04\inst04\pokitto_settings.h
+1494031767 c:\users\noela\documents\github\inst.04\inst04\pokitto_settings.h
 
 1493851218 c:\users\noela\documents\github\inst.04\inst04\pokitto_core\pokittocore.h
 	<stdint.h>
@@ -2911,7 +2911,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1493866756 c:\users\noela\documents\github\inst.04\inst04\\pokitto_settings.h
+1494031767 c:\users\noela\documents\github\inst.04\inst04\\pokitto_settings.h
 
 1493851302 c:\users\noela\documents\github\inst.04\inst04\pokitto_sim\simlcd.h
 	<stdint.h>
@@ -3184,7 +3184,7 @@
 	"Makewav.h"
 	"PokittoConsole.h"
 
-1494029439 c:\users\noela\documents\github\inst.04\inst04\world.h
+1494031733 c:\users\noela\documents\github\inst.04\inst04\world.h
 	"ardutils\Collections.h"
 	"entity.h"
 	"camera.h"
@@ -3219,7 +3219,7 @@
 	<stdint.h>
 	"../Debug.h"
 
-1494029407 c:\users\noela\documents\github\inst.04\inst04\entity.h
+1494031179 c:\users\noela\documents\github\inst.04\inst04\entity.h
 	"pokitto.h"
 	"ardutils\Collections.h"
 	"types.h"

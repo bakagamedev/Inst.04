@@ -9,7 +9,7 @@
 
 namespace Ardutils
 {
-	template <typename TItem, int8_t Capacity>
+	template <typename TItem, int16_t Capacity>
 	class List
 	{
 	public:
@@ -17,26 +17,26 @@ namespace Ardutils
 
 	private:
 		TItem items[Capacity];
-		int8_t next;
+		int16_t next;
 
 	public:
 		List(void);
 
-		int8_t GetCount(void) const; // O(1)
-		int8_t GetCapacity(void) const; // O(1)
+		int16_t GetCount(void) const; // O(1)
+		int16_t GetCapacity(void) const; // O(1)
 
 		bool Add(const TItem & item); // O(1)
 		void Remove(const TItem & item); // O(n)
-		void RemoveAt(const int8_t index); // O(n)
+		void RemoveAt(const int16_t index); // O(n)
 
 		void Clear(void); // O(n)
 		bool Contains(const TItem & item) const; // O(n)
 
 		// Returns -1 if item not found
-		int8_t IndexOf(const TItem & item) const; // O(n)
+		int16_t IndexOf(const TItem & item) const; // O(n)
 
-		TItem & operator [] (const uint8_t index); // O(1)
-		const TItem & operator [] (const uint8_t index) const; // O(1)
+		TItem & operator [] (const int16_t index); // O(1)
+		const TItem & operator [] (const int16_t index) const; // O(1)
 	};
 }
 
@@ -45,25 +45,25 @@ namespace Ardutils
 // Definition
 //
 
-template <typename TItem, int8_t Capacity>
+template <typename TItem, int16_t Capacity>
 Ardutils::List<TItem, Capacity>::List(void) :
 	next(0)
 {
 }
 
-template <typename TItem, int8_t Capacity>
-int8_t Ardutils::List<TItem, Capacity>::GetCount(void) const // O(1)
+template <typename TItem, int16_t Capacity>
+int16_t Ardutils::List<TItem, Capacity>::GetCount(void) const // O(1)
 {
 	return this->next;
 }
 
-template <typename TItem, int8_t Capacity>
-int8_t Ardutils::List<TItem, Capacity>::GetCapacity(void) const // O(1)
+template <typename TItem, int16_t Capacity>
+int16_t Ardutils::List<TItem, Capacity>::GetCapacity(void) const // O(1)
 {
 	return Capacity;
 }
 
-template <typename TItem, int8_t Capacity>
+template <typename TItem, int16_t Capacity>
 bool Ardutils::List<TItem, Capacity>::Add(const TItem & item) // O(1)
 {
 	if (this->next == Capacity)
@@ -74,7 +74,7 @@ bool Ardutils::List<TItem, Capacity>::Add(const TItem & item) // O(1)
 	return true;
 }
 
-template <typename TItem, int8_t Capacity>
+template <typename TItem, int16_t Capacity>
 void Ardutils::List<TItem, Capacity>::Remove(const TItem & item) // O(n)
 {
 	auto index = this->indexOf(item);
@@ -82,8 +82,8 @@ void Ardutils::List<TItem, Capacity>::Remove(const TItem & item) // O(n)
 		this->removeAt(index);
 }
 
-template <typename TItem, int8_t Capacity>
-void Ardutils::List<TItem, Capacity>::RemoveAt(const int8_t index) // O(n)
+template <typename TItem, int16_t Capacity>
+void Ardutils::List<TItem, Capacity>::RemoveAt(const int16_t index) // O(n)
 {
 	DEBUG_ASSERT(index >= 0);
 	DEBUG_ASSERT(index < Capacity);
@@ -94,7 +94,7 @@ void Ardutils::List<TItem, Capacity>::RemoveAt(const int8_t index) // O(n)
 	--this->next;
 }
 
-template <typename TItem, int8_t Capacity>
+template <typename TItem, int16_t Capacity>
 void Ardutils::List<TItem, Capacity>::Clear(void) // O(n)
 {
 	for (uint8_t i = 0; i < this->next; ++i)
@@ -102,14 +102,14 @@ void Ardutils::List<TItem, Capacity>::Clear(void) // O(n)
 	this->next = 0;
 }
 
-template <typename TItem, int8_t Capacity>
+template <typename TItem, int16_t Capacity>
 bool Ardutils::List<TItem, Capacity>::Contains(const TItem & item) const // O(n)
 {
 	return this->indexOf(item) != -1;
 }
 
-template <typename TItem, int8_t Capacity>
-int8_t Ardutils::List<TItem, Capacity>::IndexOf(const TItem & item) const // O(n)
+template <typename TItem, int16_t Capacity>
+int16_t Ardutils::List<TItem, Capacity>::IndexOf(const TItem & item) const // O(n)
 {
 	for (uint8_t i = 0; i < this->next; ++i)
 		if (this->items[i] == item)
@@ -118,8 +118,8 @@ int8_t Ardutils::List<TItem, Capacity>::IndexOf(const TItem & item) const // O(n
 	return -1;
 }
 
-template <typename TItem, int8_t Capacity>
-TItem & Ardutils::List<TItem, Capacity>::operator [] (const uint8_t index) // O(1)
+template <typename TItem, int16_t Capacity>
+TItem & Ardutils::List<TItem, Capacity>::operator [] (const int16_t index) // O(1)
 {
 	DEBUG_ASSERT(index >= 0);
 	DEBUG_ASSERT(index < Capacity);
@@ -128,8 +128,8 @@ TItem & Ardutils::List<TItem, Capacity>::operator [] (const uint8_t index) // O(
 	return this->items[index];
 }
 
-template <typename TItem, int8_t Capacity>
-const TItem & Ardutils::List<TItem, Capacity>::operator [] (const uint8_t index) const // O(1)
+template <typename TItem, int16_t Capacity>
+const TItem & Ardutils::List<TItem, Capacity>::operator [] (const int16_t index) const // O(1)
 {
 	DEBUG_ASSERT(index >= 0);
 	DEBUG_ASSERT(index < Capacity);

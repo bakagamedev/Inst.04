@@ -20,7 +20,7 @@ public:
 
 	Ardutils::List<Point16,8> LevelStart;
 	Ardutils::List<Entity,12> EntityList;
-	Ardutils::List<Chunk,10> ChunkList;
+	Ardutils::List<Chunk,255> ChunkList;
 
     World(Pokitto::Core &core,Camera camera);
 
@@ -34,7 +34,7 @@ World::World(Pokitto::Core &core,Camera camera)
     this->core = &core;
     this->camera = camera;
 
-    player.setType(1);
+    //player.setType(1);
     EntityList.Add(player);
     EntityList.Add(Entity(Point16(32,32)));
 }
